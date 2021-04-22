@@ -1,0 +1,39 @@
+// Mario Lab 
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    //Prompt user for an input value one through eight
+    int n;
+    do
+    {
+        n = get_int("Height: ");
+    }
+    while (n < 1 || n > 8);
+
+    for(int i = 0; i < n; i++)
+    {
+        //Conditions for left side of pyramid "l"
+        for (int l = n - 1; l > i; l--)
+        {
+            printf(" ");
+        }
+        //Conditions for middle spacing between pyramid "m"
+        for (int m = n + 1; m > n - i; m--)
+        {
+            printf("#");
+        }
+
+        printf("  ");
+        //Conditions for right side of the pyramid "r"
+        for (int r = n + 1; r > n - i; r--)
+        {
+            printf("#");
+        }
+
+        printf("\n");
+    }
+
+}
